@@ -1,11 +1,17 @@
 //Importing express library to create server
-const express = require("express")
+const express = require("express") 
+// Routing[Logic => Controller => CRUD], 
+// Listening() => Creating Server, 
+// Middlewares 
 
 const mongoose = require("mongoose")
+// Connect to Database
 
-
+const router = require("./routes/emproutes")
 
 const app = express()
+
+app.use('/emp',router)
 
 app.get("/user", (req, res) =>{
     res.send("Fetch API Call")
